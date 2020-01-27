@@ -34,7 +34,6 @@ bool HistoCumul::execute( std::string &msg)
     for(int li=0; li<In.height(); li ++){
         for(int co=0; co<In.width();co++){
             int pix = In[li][co];
-S
             (*histo)[pix]++;
 
 

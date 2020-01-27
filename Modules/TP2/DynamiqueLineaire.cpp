@@ -11,11 +11,11 @@ DynamiqueLineaire::DynamiqueLineaire( pluglink *p ) : plugin(p)
 	add_output( output );
 // Ajout des parametres
 	a = 20;
-	add_param( a, "" );
+    add_param( a, "valeur de a : 0<= a <b <=255" );
 	b = 35;
-	add_param( b, "" );
-	rehaussement = true;
-	add_param( rehaussement, "" );
+    add_param( b, "valeur de a : 0<= a <b <=255" );
+    rehaussement = true;
+    add_param( rehaussement, "bool" );
 }
 
 
@@ -23,14 +23,22 @@ bool DynamiqueLineaire::is_a_set( std::string &msg )
 {
 	// Ajouter les tests a faire sur le parametre a
 	// Renseigner la variable msg si necessaire
-	return true; 
+    if(a>=0 && a<=255)
+    {
+        return true;
+    }
+    return false;
 }
 
 bool DynamiqueLineaire::is_b_set( std::string &msg )
 {
 	// Ajouter les tests a faire sur le parametre b
 	// Renseigner la variable msg si necessaire
-	return true; 
+    if (b>=0 && b<=255)
+    {
+        return true;
+    }
+    return false;
 }
 
 bool DynamiqueLineaire::is_rehaussement_set( std::string &msg )
@@ -78,6 +86,7 @@ bool DynamiqueLineaire::verifyParameters( std::string &msg, bool isRunning )
 bool DynamiqueLineaire::is_ready( std::string & msg )
 {
 	return verifyParameters(msg, false);
+
 }
 
 bool DynamiqueLineaire::execute( std::string &msg)
@@ -94,7 +103,28 @@ bool DynamiqueLineaire::execute( std::string &msg)
 	}
 
 	// ALLOUER les sorties ! TODO
+    output=input;
+
 	// Ecrire le code du plugin : TODO !!
+    for(int i = 0; i<input->height();i++){
+       for(int j = 0; j<input->width();j++)
+       {
+           int d = (*output)[i][j];
+           if (rehaussement){
+                   if(d<a){
+                   d=0;
+                 }
+                   else if (d>b){
+                   d = 255;
+                  }
+                   else{
+                    d= (d-a)*255/(b-a);
+                    }
+                    (*output)[i][j]=d;
+       }
+
+
+    }
 
 	return true; 
 }

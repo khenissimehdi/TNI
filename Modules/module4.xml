@@ -1,0 +1,48 @@
+<!DOCTYPE qTniML>
+<workspace version="2" subversion="1">
+ <modules>
+  <module>
+   <identification winid="6" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
+   <position x="-27" y="-86"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="5" name="DivResolution" library="TP2/release/DivResolution"/>
+   <position x="-459" y="-299"/>
+   <parameters>
+    <parameter paramid="0" value="2"/>
+    <parameter paramid="1" value="2"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="4" name="Gray Image Loader" library="IO/release/load_gray_image"/>
+   <position x="-437" y="2"/>
+   <parameters>
+    <parameter paramid="0" value="/home/Users/most0001/S4/TNI/Modules/im1.png"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="3" name="ReduireDynamique" library="TP2/release/ReduireDynamique"/>
+   <position x="-254" y="-293"/>
+   <parameters>
+    <parameter paramid="0" value="7"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="1" name="DynamiqueExpon" library="TP2/release/DynamiqueExpon"/>
+   <position x="-193" y="-159"/>
+   <parameters>
+    <parameter paramid="0" value="1"/>
+    <parameter paramid="1" value="1"/>
+   </parameters>
+  </module>
+ </modules>
+ <links>
+  <link from="6" from_node="0" to="1" to_node="0"/>
+  <link from="5" from_node="0" to="4" to_node="0"/>
+  <link from="3" from_node="0" to="4" to_node="0"/>
+  <link from="1" from_node="0" to="4" to_node="0"/>
+ </links>
+</workspace>
