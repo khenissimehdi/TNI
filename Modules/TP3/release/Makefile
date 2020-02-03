@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DCOUPEBANDE_LIBRARY -DQT_QML_DEBUG -DQT_NO_DEBUG
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I. -Iui -I../../../../../../bib/vautrot/Toolbox/ImageToolbox -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I. -I. -Iui -I../../../../../../../bib/vautrot/Toolbox/ImageToolbox -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -35,10 +35,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = CoupeBande1.0.0
-DISTDIR = /home/Etudiants/most0001/S4/TNI/Modules/TP3/.objs/CoupeBande1.0.0
+DISTDIR = /home/Etudiants/most0001/S4/TNI/Modules/TP3/release/.objs/CoupeBande1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -shared -Wl,-soname,libCoupeBande.so.1
-LIBS          = $(SUBLIBS) -L../../../../../../bib/vautrot/Toolbox/ImageToolbox/release -lplugin -lpthread 
+LIBS          = $(SUBLIBS) -L../../../../../../../bib/vautrot/Toolbox/ImageToolbox/release -lplugin -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -110,7 +110,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		.qmake.stash \
+		../.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -222,7 +222,7 @@ Makefile: CoupeBande.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.c
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		.qmake.stash \
+		../.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -298,7 +298,7 @@ Makefile: CoupeBande.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.c
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
-.qmake.stash:
+../.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -339,7 +339,6 @@ clean: compiler_clean
 distclean: clean 
 	-$(DEL_FILE) release/$(TARGET) 
 	-$(DEL_FILE) release/$(TARGET0) release/$(TARGET1) release/$(TARGET2) $(TARGETA)
-	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -360,17 +359,17 @@ compiler_clean:
 ####### Compile
 
 .objs/CoupeBande.o: CoupeBande.cpp CoupeBande.hpp \
-		../../../../../../bib/vautrot/Toolbox/ImageToolbox/plugin.hpp \
+		../../../../../../../bib/vautrot/Toolbox/ImageToolbox/plugin.hpp \
 		/home/bib/vautrot/Toolbox/ImageToolbox/pluglink.hpp \
 		/home/bib/vautrot/Toolbox/ImageToolbox/define.hpp \
-		../../../../../../bib/vautrot/Toolbox/ImageToolbox/auto_ref.hpp \
-		../../../../../../bib/vautrot/Toolbox/ImageToolbox/base_type.hpp \
-		../../../../../../bib/vautrot/Toolbox/ImageToolbox/w_signal1d.hpp \
+		../../../../../../../bib/vautrot/Toolbox/ImageToolbox/auto_ref.hpp \
+		../../../../../../../bib/vautrot/Toolbox/ImageToolbox/base_type.hpp \
+		../../../../../../../bib/vautrot/Toolbox/ImageToolbox/w_signal1d.hpp \
 		/home/bib/vautrot/Toolbox/ImageToolbox/w_geometrie.hpp \
 		/home/bib/vautrot/Toolbox/ImageToolbox/w_signal.hpp \
 		/home/bib/vautrot/Toolbox/ImageToolbox/w_conv.hpp \
-		../../../../../../bib/vautrot/Toolbox/ImageToolbox/w_color.hpp \
-		../../../../../../bib/vautrot/Toolbox/ImageToolbox/w_varray.hpp \
+		../../../../../../../bib/vautrot/Toolbox/ImageToolbox/w_color.hpp \
+		../../../../../../../bib/vautrot/Toolbox/ImageToolbox/w_varray.hpp \
 		/home/bib/vautrot/Toolbox/ImageToolbox/w_error.hpp \
 		/home/bib/vautrot/Toolbox/ImageToolbox/debug.hpp \
 		/home/bib/vautrot/Toolbox/ImageToolbox/w_border.hpp \

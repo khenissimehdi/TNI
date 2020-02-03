@@ -2,47 +2,63 @@
 <workspace version="2" subversion="1">
  <modules>
   <module>
-   <identification winid="6" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
-   <position x="-27" y="-86"/>
+   <identification winid="21" name="Signal double displayer" library="IO/release/display_double_signal"/>
+   <position x="-38" y="-116"/>
    <parameters>
     <parameter paramid="0" value=""/>
    </parameters>
   </module>
   <module>
-   <identification winid="5" name="DivResolution" library="TP2/release/DivResolution"/>
-   <position x="-459" y="-299"/>
+   <identification winid="20" name="FFT Shift 1D" library="Fourier/release/fftshift1d"/>
+   <position x="-227" y="-205"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="19" name="complexe1D ->Module,phase" library="Fourier/release/ComplexeToModulePhase1D"/>
+   <position x="-300" y="-402"/>
    <parameters>
-    <parameter paramid="0" value="2"/>
-    <parameter paramid="1" value="2"/>
+    <parameter paramid="0" value="0"/>
    </parameters>
   </module>
   <module>
-   <identification winid="4" name="Gray Image Loader" library="IO/release/load_gray_image"/>
-   <position x="-437" y="2"/>
+   <identification winid="18" name="Sinusoide" library="TP3/release/Sinusoide"/>
+   <position x="-576" y="-346"/>
    <parameters>
-    <parameter paramid="0" value="/home/Users/most0001/S4/TNI/Modules/im1.png"/>
+    <parameter paramid="0" value="0.0125"/>
+    <parameter paramid="1" value="0.125"/>
+    <parameter paramid="2" value="1024"/>
    </parameters>
   </module>
   <module>
-   <identification winid="3" name="ReduireDynamique" library="TP2/release/ReduireDynamique"/>
-   <position x="-254" y="-293"/>
-   <parameters>
-    <parameter paramid="0" value="7"/>
-   </parameters>
-  </module>
-  <module>
-   <identification winid="1" name="DynamiqueExpon" library="TP2/release/DynamiqueExpon"/>
-   <position x="-193" y="-159"/>
+   <identification winid="17" name="DFT" library="Fourier/release/dft1d"/>
+   <position x="-446" y="-186"/>
    <parameters>
     <parameter paramid="0" value="1"/>
-    <parameter paramid="1" value="1"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="12" name="Signal double displayer" library="IO/release/display_double_signal"/>
+   <position x="54" y="-242"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="13" name="CoupeBande" library="TP3/release/release/CoupeBande"/>
+   <position x="-55" y="-419"/>
+   <parameters>
+    <parameter paramid="0" value="630"/>
+    <parameter paramid="1" value="650"/>
    </parameters>
   </module>
  </modules>
  <links>
-  <link from="6" from_node="0" to="1" to_node="0"/>
-  <link from="5" from_node="0" to="4" to_node="0"/>
-  <link from="3" from_node="0" to="4" to_node="0"/>
-  <link from="1" from_node="0" to="4" to_node="0"/>
+  <link from="21" from_node="0" to="19" to_node="1"/>
+  <link from="20" from_node="0" to="19" to_node="0"/>
+  <link from="19" from_node="0" to="17" to_node="0"/>
+  <link from="19" from_node="1" to="17" to_node="1"/>
+  <link from="17" from_node="0" to="18" to_node="0"/>
+  <link from="12" from_node="0" to="13" to_node="0"/>
+  <link from="13" from_node="0" to="20" to_node="0"/>
  </links>
 </workspace>

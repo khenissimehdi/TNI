@@ -1,4 +1,5 @@
 #include "Sinusoide.hpp"
+#include <cmath>;
 
 using namespace ns_wtni;
 
@@ -7,12 +8,12 @@ Sinusoide::Sinusoide( pluglink *p ) : plugin(p)
 // Ajout des donnees en entree
 
 // Ajout des donnees en sortie
-	add_output( output );
+    add_output( output );
 // Ajout des parametres
 	f1 = 0.4;
-	add_param( f1, "" );
+    add_param( f1, "frequence 1" );
 	f2 = 0.3;
-	add_param( f2, "" );
+    add_param( f2, "frequence 2" );
 	N = 256;
 	add_param( N, "nombre d'echantillons" );
 }
@@ -22,21 +23,36 @@ bool Sinusoide::is_f1_set( std::string &msg )
 {
 	// Ajouter les tests a faire sur le parametre f1
 	// Renseigner la variable msg si necessaire
-	return true; 
+    if(f1>0 && f1<=0.5)
+    {
+        return true;
+    }
+    msg = "f1";
+    return false;
 }
 
 bool Sinusoide::is_f2_set( std::string &msg )
 {
 	// Ajouter les tests a faire sur le parametre f2
 	// Renseigner la variable msg si necessaire
-	return true; 
+    if(f2 >0 && f2<=0.5)
+    {
+        return true;
+    }
+    msg = "f2";
+    return false;
 }
 
 bool Sinusoide::is_N_set( std::string &msg )
 {
 	// Ajouter les tests a faire sur le parametre N
 	// Renseigner la variable msg si necessaire
-	return true; 
+    if(N >= 256)
+    {
+        return true;
+    }
+    msg = "N";
+    return false;
 }
 
 bool Sinusoide::verifyParameters( std::string &msg, bool isRunning )
@@ -85,8 +101,25 @@ bool Sinusoide::execute( std::string &msg)
 	if ( !verifyParameters( msg, true ) ) 
 		return false;
 
-	// ALLOUER les sorties ! TODO
+
+    // ALLOUER les sorties ! TODO
+
+    output = new e1::signal<double>(N);
+    e1::signal<double> & Out = *output;
 	// Ecrire le code du plugin : TODO !!
+    for(int i = 0 ; i <N ; i++)
+    {
+        if(i<N/2)
+        {
+            (*output)[i]=sin(2*M_PI*f1*i);
+
+        }
+        if(i>=N/2)
+        {
+            (*output)[i]=sin(2*M_PI*f2*i);
+
+        }
+    }
 
 	return true; 
 }
