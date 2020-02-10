@@ -1,0 +1,64 @@
+<!DOCTYPE qTniML>
+<workspace version="2" subversion="1">
+ <modules>
+  <module>
+   <identification winid="41" name="Double Image Displayer" library="IO/release/display_double_image"/>
+   <position x="96" y="13"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="43" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
+   <position x="-59" y="10"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="42" name="Creer/Charger un noyau" library="Filtrage/release/create_noyau"/>
+   <position x="-196" y="-80"/>
+   <parameters>
+    <own_parameter key="coeff_0" value="-0.0625"/>
+    <own_parameter key="coeff_1" value="0.0625"/>
+    <own_parameter key="coeff_2" value="-0.0625"/>
+    <own_parameter key="coeff_3" value="0.0625"/>
+    <own_parameter key="coeff_4" value="-0.0625"/>
+    <own_parameter key="coeff_5" value="0.0625"/>
+    <own_parameter key="pos_x_0" value="-1"/>
+    <own_parameter key="pos_x_1" value="1"/>
+    <own_parameter key="pos_x_2" value="-1"/>
+    <own_parameter key="pos_x_3" value="1"/>
+    <own_parameter key="pos_x_4" value="-1"/>
+    <own_parameter key="pos_x_5" value="1"/>
+    <own_parameter key="pos_y_0" value="-1"/>
+    <own_parameter key="pos_y_1" value="-1"/>
+    <own_parameter key="pos_y_2" value="0"/>
+    <own_parameter key="pos_y_3" value="0"/>
+    <own_parameter key="pos_y_4" value="1"/>
+    <own_parameter key="pos_y_5" value="1"/>
+    <own_parameter key="taille" value="6"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="40" name="Convolution 2D" library="Filtrage/release/conv2d_gray"/>
+   <position x="14" y="-166"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="39" name="Gray Image Loader" library="IO/release/load_gray_image"/>
+   <position x="-142" y="-194"/>
+   <parameters>
+    <parameter paramid="0" value="/home/Users/most0001/S4/TNI/Modules/TP3/architecture.png"/>
+   </parameters>
+  </module>
+ </modules>
+ <links>
+  <link from="41" from_node="0" to="40" to_node="0"/>
+  <link from="43" from_node="0" to="39" to_node="0"/>
+  <link from="40" from_node="0" to="39" to_node="0"/>
+  <link from="40" from_node="1" to="42" to_node="0"/>
+ </links>
+</workspace>

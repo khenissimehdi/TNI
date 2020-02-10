@@ -10,7 +10,7 @@ class CoupeBande : public plugin
 {
 private:
 // Donnees en entree
-	const_auto_ref<ns_wtni::e1::signal<double> > input;
+    auto_ref<ns_wtni::e1::signal<double> > input;
 // Donnees en sortie
 	auto_ref<ns_wtni::e1::signal<double> > output;
 // Parametres

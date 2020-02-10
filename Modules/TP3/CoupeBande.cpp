@@ -27,7 +27,7 @@ bool CoupeBande::execute( std::string &msg)
     }
 
     // ALLOUER les sorties ! TODO
-    output=input;
+    output = input;
     int size = output->size();
     if(n1>n2)
     {

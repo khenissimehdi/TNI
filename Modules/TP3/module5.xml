@@ -1,0 +1,120 @@
+<!DOCTYPE qTniML>
+<workspace version="2" subversion="1">
+ <modules>
+  <module>
+   <identification winid="66" name="Signal 32 bits displayer" library="IO/release/display_long_signal"/>
+   <position x="177" y="121"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="65" name="Histogramme des niveaux de gris" library="Operators/release/gray_histogram"/>
+   <position x="146" y="45"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="63" name="Signal 32 bits displayer" library="IO/release/display_long_signal"/>
+   <position x="-151" y="54"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="62" name="Histogramme des niveaux de gris" library="Operators/release/gray_histogram"/>
+   <position x="-321" y="23"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="60" name="Module, Phase -> Complexe" library="Fourier/release/ModPhase2Complex"/>
+   <position x="-133" y="-228"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="59" name="Logarithme" library="Fourier/release/Logarithm"/>
+   <position x="92" y="-344"/>
+   <parameters>
+    <parameter paramid="0" value="1"/>
+    <parameter paramid="1" value="5"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="58" name="FFT Shift" library="Fourier/release/fftshift2d"/>
+   <position x="64" y="-206"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="57" name="FFT" library="Fourier/release/fft2d"/>
+   <position x="-312" y="-219"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="55" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
+   <position x="328" y="-346"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="52" name="Image Double -> Image Gray" library="Conversion/release/double_to_gray"/>
+   <position x="208" y="-209"/>
+   <parameters>
+    <parameter paramid="0" value="2"/>
+    <parameter paramid="1" value="1"/>
+    <parameter paramid="2" value="0"/>
+    <parameter paramid="3" value="255"/>
+    <parameter paramid="4" value="1"/>
+    <parameter paramid="5" value="2.22507e-308"/>
+    <parameter paramid="6" value="1.79769e+308"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="48" name="Bruitage Salt and Pepper" library="Filtrage/release/salt_pepper"/>
+   <position x="-186" y="-369"/>
+   <parameters>
+    <parameter paramid="0" value="1"/>
+    <parameter paramid="1" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="47" name="Ajouter du bruit" library="Filtrage/release/do_noise_double_2d"/>
+   <position x="-429" y="-220"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+    <parameter paramid="1" value="10"/>
+    <parameter paramid="2" value="0"/>
+    <parameter paramid="3" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="46" name="Image Gray -> Image Double" library="Conversion/release/gray_to_double"/>
+   <position x="-37" y="-350"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="44" name="Gray Image Loader" library="IO/release/load_gray_image"/>
+   <position x="-431" y="-349"/>
+   <parameters>
+    <parameter paramid="0" value="/home/Users/most0001/S4/TNI/Modules/TP3/fond512.png"/>
+   </parameters>
+  </module>
+ </modules>
+ <links>
+  <link from="66" from_node="0" to="65" to_node="0"/>
+  <link from="65" from_node="0" to="52" to_node="0"/>
+  <link from="63" from_node="0" to="62" to_node="0"/>
+  <link from="62" from_node="0" to="48" to_node="0"/>
+  <link from="60" from_node="0" to="57" to_node="0"/>
+  <link from="60" from_node="1" to="57" to_node="1"/>
+  <link from="59" from_node="0" to="58" to_node="0"/>
+  <link from="58" from_node="0" to="60" to_node="0"/>
+  <link from="57" from_node="0" to="47" to_node="0"/>
+  <link from="55" from_node="0" to="52" to_node="0"/>
+  <link from="52" from_node="0" to="59" to_node="0"/>
+  <link from="48" from_node="0" to="44" to_node="0"/>
+  <link from="47" from_node="0" to="46" to_node="0"/>
+  <link from="46" from_node="0" to="48" to_node="0"/>
+ </links>
+</workspace>
