@@ -2,41 +2,57 @@
 <workspace version="2" subversion="1">
  <modules>
   <module>
-   <identification winid="5" name="Gray Image Loader" library="IO/release/load_gray_image"/>
-   <position x="-76" y="-127"/>
+   <identification winid="13" name="Bilateral" library="TP3/release/Bilateral"/>
+   <position x="82" y="-249"/>
    <parameters>
-    <parameter output="1" paramid="0" value="/home/Etudiants/most0001/S4/TNI/Modules/img4.png"/>
+    <parameter paramid="0" value="3"/>
+    <parameter paramid="1" value="0.5"/>
+    <parameter paramid="2" value="0.5"/>
    </parameters>
   </module>
   <module>
-   <identification winid="4" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
+   <identification winid="11" name="Bruitage Salt and Pepper" library="Filtrage/release/salt_pepper"/>
+   <position x="19" y="46"/>
+   <parameters>
+    <parameter paramid="0" value="5"/>
+    <parameter paramid="1" value="1"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="10" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
+   <position x="243" y="14"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="9" name="Bruitage Salt and Pepper" library="Filtrage/release/salt_pepper"/>
+   <position x="-19" y="-124"/>
+   <parameters>
+    <parameter paramid="0" value="5"/>
+    <parameter paramid="1" value="1"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="8" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
    <position x="245" y="-75"/>
    <parameters>
     <parameter paramid="0" value=""/>
    </parameters>
   </module>
   <module>
-   <identification winid="3" name="Histogramme des niveaux de gris" library="Operators/release/gray_histogram"/>
-   <position x="92" y="-26"/>
-   <parameters/>
-  </module>
-  <module>
-   <identification winid="2" name="Signal 32 bits displayer" library="IO/release/display_long_signal"/>
-   <position x="264" y="38"/>
+   <identification winid="7" name="Gray Image Loader" library="IO/release/load_gray_image"/>
+   <position x="-168" y="-39"/>
    <parameters>
-    <parameter paramid="0" value=""/>
+    <parameter output="1" paramid="0" value="/home/Etudiants/most0001/S4/TNI/Modules/TP3/falaises.jpg"/>
    </parameters>
-  </module>
-  <module>
-   <identification winid="1" name="histogramme cumulé " library="TP1/release/HistoCumul"/>
-   <position x="-10" y="127"/>
-   <parameters/>
   </module>
  </modules>
  <links>
-  <link from="4" from_node="0" to="5" to_node="0"/>
-  <link from="3" from_node="0" to="5" to_node="0"/>
-  <link from="2" from_node="0" to="1" to_node="0"/>
-  <link from="1" from_node="0" to="5" to_node="0"/>
+  <link from="13" from_node="0" to="9" to_node="0"/>
+  <link from="11" from_node="0" to="7" to_node="0"/>
+  <link from="10" from_node="0" to="11" to_node="0"/>
+  <link from="9" from_node="0" to="7" to_node="0"/>
+  <link from="8" from_node="0" to="13" to_node="0"/>
  </links>
 </workspace>

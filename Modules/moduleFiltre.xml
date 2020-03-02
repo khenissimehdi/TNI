@@ -1,0 +1,153 @@
+<!DOCTYPE qTniML>
+<workspace version="2" subversion="1">
+ <modules>
+  <module>
+   <identification winid="129" name="Logarithme" library="Fourier/release/Logarithm"/>
+   <position x="-2038" y="-719"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+    <parameter paramid="1" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="128" name="Logarithme" library="Fourier/release/Logarithm"/>
+   <position x="-1796" y="-754"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+    <parameter paramid="1" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="127" name="FFT Shift" library="Fourier/release/fftshift2d"/>
+   <position x="-1733" y="-860"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="126" name="FFT Shift" library="Fourier/release/fftshift2d"/>
+   <position x="-2167" y="-589"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="123" name="Complexe -> Module, Phase" library="Fourier/release/Complexe2ModPhase"/>
+   <position x="-1932" y="-803"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="122" name="Complexe -> Module, Phase" library="Fourier/release/Complexe2ModPhase"/>
+   <position x="-2291" y="-763"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="125" name="Double Image Displayer" library="IO/release/display_double_image"/>
+   <position x="-1581" y="-769"/>
+   <parameters>
+    <parameter paramid="0" value="bruit"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="124" name="Double Image Displayer" library="IO/release/display_double_image"/>
+   <position x="-1920" y="-619"/>
+   <parameters>
+    <parameter paramid="0" value="sans bruit"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="119" name="Logarithme" library="Fourier/release/Logarithm"/>
+   <position x="-1855.49" y="-938.509"/>
+   <parameters>
+    <parameter output="1" paramid="0" value="1"/>
+    <parameter output="2" paramid="1" value="99"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="118" name="DFT" library="Fourier/release/dft2d"/>
+   <position x="-2024.49" y="-921.225"/>
+   <parameters>
+    <parameter paramid="0" value="1"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="100" name="Logarithme" library="Fourier/release/Logarithm"/>
+   <position x="-2158.45" y="-757.022"/>
+   <parameters>
+    <parameter paramid="0" input="1" value="1"/>
+    <parameter paramid="1" input="2" value="99"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="84" name="DFT" library="Fourier/release/dft2d"/>
+   <position x="-2366.82" y="-897.284"/>
+   <parameters>
+    <parameter paramid="0" value="1"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="83" name="Image Gray -> Image Double" library="Conversion/release/gray_to_double"/>
+   <position x="-2286.17" y="-1051.76"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="82" name="Ajouter du bruit" library="Filtrage/release/do_noise_double_2d"/>
+   <position x="-1961.02" y="-1030.48"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+    <parameter paramid="1" value="30"/>
+    <parameter paramid="2" value="0"/>
+    <parameter paramid="3" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="81" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
+   <position x="-1480.71" y="-976.41"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="80" name="Image Double -> Image Gray" library="Conversion/release/double_to_gray"/>
+   <position x="-1614.31" y="-1057.88"/>
+   <parameters>
+    <parameter paramid="0" value="2"/>
+    <parameter paramid="1" value="1"/>
+    <parameter paramid="2" value="0"/>
+    <parameter paramid="3" value="255"/>
+    <parameter paramid="4" value="1"/>
+    <parameter paramid="5" value="2.22507e-308"/>
+    <parameter paramid="6" value="1.79769e+308"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="79" name="Gray Image Loader" library="IO/release/load_gray_image"/>
+   <position x="-2527.24" y="-1034.12"/>
+   <parameters>
+    <parameter paramid="0" value="/home/Users/most0001/S4/TNI/Modules/TP3/falaises.jpg"/>
+   </parameters>
+  </module>
+ </modules>
+ <links>
+  <link from="129" from_node="0" to="100" to_node="0"/>
+  <link from="128" from_node="0" to="119" to_node="0"/>
+  <link from="127" from_node="0" to="128" to_node="0"/>
+  <link from="126" from_node="0" to="129" to_node="0"/>
+  <link from="123" from_node="0" to="118" to_node="0"/>
+  <link from="123" from_node="1" to="118" to_node="1"/>
+  <link from="122" from_node="0" to="84" to_node="0"/>
+  <link from="122" from_node="1" to="84" to_node="1"/>
+  <link from="125" from_node="0" to="127" to_node="0"/>
+  <link from="124" from_node="0" to="126" to_node="0"/>
+  <link from="119" from_node="0" to="123" to_node="0"/>
+  <link from="118" from_node="0" to="82" to_node="0"/>
+  <link from="100" from_node="0" to="122" to_node="0"/>
+  <link from="100" from_node="1" to="119" to_node="1"/>
+  <link from="100" from_node="2" to="119" to_node="2"/>
+  <link from="84" from_node="0" to="83" to_node="0"/>
+  <link from="83" from_node="0" to="79" to_node="0"/>
+  <link from="82" from_node="0" to="83" to_node="0"/>
+  <link from="81" from_node="0" to="80" to_node="0"/>
+  <link from="80" from_node="0" to="82" to_node="0"/>
+ </links>
+</workspace>
