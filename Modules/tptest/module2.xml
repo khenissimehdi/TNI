@@ -1,0 +1,45 @@
+<!DOCTYPE qTniML>
+<workspace version="2" subversion="1">
+ <modules>
+  <module>
+   <identification winid="9" name="Dilatation" library="tptest/release/Dilatation"/>
+   <position x="181" y="9"/>
+   <parameters>
+    <parameter paramid="0" value="0"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="8" name="Gradientmorpho" library="tptest/release/Gradient_morphologique"/>
+   <position x="320" y="69"/>
+   <parameters/>
+  </module>
+  <module>
+   <identification winid="7" name="Gray Image Displayer" library="IO/release/display_gray_image"/>
+   <position x="453" y="34"/>
+   <parameters>
+    <parameter paramid="0" value=""/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="6" name="Gray Image Loader" library="IO/release/load_gray_image"/>
+   <position x="35" y="-35"/>
+   <parameters>
+    <parameter paramid="0" value="/home/Users/most0001/S4/TNI/Modules/img2.png"/>
+   </parameters>
+  </module>
+  <module>
+   <identification winid="5" name="Erosion" library="tptest/release/Erosion"/>
+   <position x="171" y="-74"/>
+   <parameters>
+    <parameter paramid="0" value="4"/>
+   </parameters>
+  </module>
+ </modules>
+ <links>
+  <link from="9" from_node="0" to="6" to_node="0"/>
+  <link from="8" from_node="0" to="9" to_node="0"/>
+  <link from="8" from_node="1" to="5" to_node="0"/>
+  <link from="7" from_node="0" to="8" to_node="0"/>
+  <link from="5" from_node="0" to="6" to_node="0"/>
+ </links>
+</workspace>
